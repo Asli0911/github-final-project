@@ -1,19 +1,20 @@
-# Simple Interest Calculator
+# Author: Asli
 
-echo "Simple Interest Calculator"
+# Input:
+# p, principal amount
+# t, time period in years
+# r, annual rate of interest
 
-# Take user inputs
-read -p "Enter Principal amount (P): " principal
-read -p "Enter Rate of Interest (R): " rate
-read -p "Enter Time period in years (T): " time
+# Output:
+# simple interest = p*t*r
 
-# Calculate Simple Interest
-simple_interest=$(echo "scale=2; ($principal * $rate * $time) / 100" | bc)
+echo "Enter the principal:"
+read p
+echo "Enter rate of interest per year:"
+read r
+echo "Enter time period in years:"
+read t
 
-# Display result
-echo "-----------------------------"
-echo "Principal Amount: $principal"
-echo "Rate of Interest: $rate"
-echo "Time Period: $time years"
-echo "Simple Interest: $simple_interest"
-echo "-----------------------------"
+s=$(expr $p \* $t \* $r / 100)
+echo "The simple interest is: "
+echo $s
